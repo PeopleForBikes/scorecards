@@ -17,6 +17,8 @@ export default function IndexPage() {
     "united states",
   ];
 
+  const scorecard_url = "https://remy-scorecards.s3.amazonaws.com/2021/v15/";
+
   return (
     <>
       {/* Title */}
@@ -59,7 +61,7 @@ export default function IndexPage() {
       {/* Country cards */}
       <div className="flex flex-wrap items-center justify-center mb-16">
         {countries.map((country) => (
-          <Card key={country} country={country}></Card>
+          <Card key={country} base_url={scorecard_url} country={country}></Card>
         ))}
       </div>
     </>
