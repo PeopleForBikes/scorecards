@@ -15,6 +15,34 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: extractions/setup-just@v1
-
+      - name: lint JS
+        run: just lint-js
       - name: lint markdown
         run: just lint-md
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install
+        run: npm install
+      - name: build
+        run: yarn build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: site
+          path: out
+
+  publish:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: site
+          path: out
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
