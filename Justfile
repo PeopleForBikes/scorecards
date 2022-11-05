@@ -6,7 +6,7 @@ lint: lint-md
 
 # Lint markown files.
 lint-md:
-    npx --yes markdownlint-cli2 "**/*.md" "#.venv" "#docs/themes"
+    npx --yes markdownlint-cli2 "**/*.md" "#node_modules"
 
 # Meta tasks running all formatters at once.
 fmt: fmt-md fmt-just
@@ -18,6 +18,3 @@ fmt-just:
 # Format markdown files.
 fmt-md:
     npx --yes prettier --write --prose-wrap always "**/*.md"
-
-
-
