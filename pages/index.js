@@ -59,7 +59,7 @@ export default function IndexPage() {
       {/* Country cards */}
       <div className="flex flex-wrap items-center justify-center mb-16">
         {countries.map((country) => (
-          <Card country={country}></Card>
+          <Card key={country} country={country}></Card>
         ))}
       </div>
     </>
