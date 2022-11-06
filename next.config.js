@@ -6,8 +6,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: isProduction ? "/scorecard-portal" : "",
-  assetPrefix: isProduction ? "/scorecard-portal" : "",
+  basePath: isProduction ? "/scorecards" : "",
+  assetPrefix: isProduction ? "/scorecards" : "",
 };
 
 module.exports = nextConfig;
