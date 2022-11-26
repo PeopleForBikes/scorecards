@@ -6,7 +6,7 @@ lint: lint-js lint-md
 
 # Lint javascript files.
 lint-js:
-  npx --yes prettier --check "**/*.js"
+    npx --yes prettier --check "**/*.js"
 
 # Lint markown files.
 lint-md:
@@ -26,4 +26,3 @@ fmt-just:
 # Format markdown files.
 fmt-md:
     npx --yes prettier --write --prose-wrap always "**/*.md"
-

@@ -16,8 +16,9 @@ export default function IndexPage() {
     "spain",
     "united states",
   ];
-
-  const scorecard_url = "https://remy-scorecards.s3.amazonaws.com/2021/v15/";
+  const host = "https://bna-scorecards.s3.amazonaws.com";
+  const scorecard_url = host + "/2021/v15/";
+  const archives = host + "/index.html";
 
   return (
     <>
@@ -63,6 +64,19 @@ export default function IndexPage() {
         {countries.map((country) => (
           <Card key={country} base_url={scorecard_url} country={country}></Card>
         ))}
+      </div>
+
+      {/* Archives */}
+      <div className="flex justify-center mb-16">
+        <p>
+          <a
+            href={archives}
+            alt="Past Scorecards"
+            className="text-pfb-bright-cyan"
+          >
+            For past scorecards, visit our archives ⇾
+          </a>
+        </p>
       </div>
     </>
   );
