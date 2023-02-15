@@ -8,6 +8,7 @@ export default function Card(props) {
           <img
             alt={props.country}
             className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4 border"
+            crossorigin="anonymous"
             src={"https://countryflagsapi.com/svg/" + props.country}
           />
           <div className="flex-grow">
