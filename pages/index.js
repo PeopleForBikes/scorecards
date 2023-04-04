@@ -2,19 +2,19 @@ import Card from "../components/card";
 
 export default function IndexPage() {
   const countries = [
-    "australia",
-    "belgium",
-    "canada",
-    "denmark",
-    "england",
-    "france",
-    "germany",
-    "italy",
-    "netherlands",
-    "norway",
-    "scotland",
-    "spain",
-    "united states",
+    { country: "australia", code: "au" },
+    { country: "belgium", code: "be" },
+    { country: "canada", code: "ca" },
+    { country: "denmark", code: "dk" },
+    { country: "england", code: "gb-eng" },
+    { country: "france", code: "fr" },
+    { country: "germany", code: "de" },
+    { country: "italy", code: "it" },
+    { country: "netherlands", code: "nl" },
+    { country: "norway", code: "no" },
+    { country: "scotland", code: "gb-sct" },
+    { country: "spain", code: "es" },
+    { country: "united states", code: "us" },
   ];
   const host = "https://bna-scorecards.s3.amazonaws.com";
   const scorecard_url = host + "/2021/v15/";
@@ -62,7 +62,11 @@ export default function IndexPage() {
       {/* Country cards */}
       <div className="flex flex-wrap items-center justify-center mb-16">
         {countries.map((country) => (
-          <Card key={country} base_url={scorecard_url} country={country}></Card>
+          <Card
+            key={country.code}
+            base_url={scorecard_url}
+            country={country}
+          ></Card>
         ))}
       </div>
 
