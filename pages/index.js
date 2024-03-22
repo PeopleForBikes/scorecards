@@ -17,7 +17,7 @@ export default function IndexPage() {
     { country: "united states", code: "us" },
   ];
   const host = "https://bna-scorecards.s3.amazonaws.com";
-  const scorecard_url = host + "/2021/v15/";
+  const scorecard_url = host + "/2023/v23.12/";
   const archives = host + "/index.html";
 
   return (
